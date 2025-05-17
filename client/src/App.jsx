@@ -10,7 +10,7 @@ import React, { useContext } from 'react';
    import Home from './pages/Home';
    import { AuthContext } from './context/AuthContext';
 
-   const App = () => {
+   const AppContent = () => {
      const { user } = useContext(AuthContext);
 
      return (
@@ -40,4 +40,9 @@ import React, { useContext } from 'react';
      );
    };
 
+   const App = () => {
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
+   }
    export default App;
